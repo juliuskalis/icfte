@@ -8,7 +8,7 @@ import { AllComponent } from './sites/all/all.component';
 import { NavigationComponent } from './parts/navigation/navigation.component';
 import { StartComponent } from './sites/start/start.component';
 import { QuizComponent } from './sites/quiz/quiz.component';
-import {RouterModule} from "@angular/router";
+import { StatisticsComponent } from './sites/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +17,12 @@ import {RouterModule} from "@angular/router";
     AllComponent,
     NavigationComponent,
     StartComponent,
-    QuizComponent
+    QuizComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    RouterModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

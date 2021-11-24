@@ -4,11 +4,13 @@ import {LearnComponent} from "./sites/learn/learn.component";
 import {AllComponent} from "./sites/all/all.component";
 import {StartComponent} from "./sites/start/start.component";
 import {QuizComponent} from "./sites/quiz/quiz.component";
+import {StatisticsComponent} from "./sites/statistics/statistics.component";
 
 const routes: Routes = [
   { path: '', component: StartComponent },
   { path: 'learn', component: LearnComponent },
   { path: 'quiz', component: QuizComponent },
+  { path: 'stats', component: StatisticsComponent },
   { path: 'all', component: AllComponent },
   { path: '**', redirectTo: '' }
 ];
