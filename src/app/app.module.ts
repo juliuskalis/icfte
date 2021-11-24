@@ -7,6 +7,8 @@ import { LearnComponent } from './sites/learn/learn.component';
 import { AllComponent } from './sites/all/all.component';
 import { NavigationComponent } from './parts/navigation/navigation.component';
 import { StartComponent } from './sites/start/start.component';
+import { QuizComponent } from './sites/quiz/quiz.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { StartComponent } from './sites/start/start.component';
     LearnComponent,
     AllComponent,
     NavigationComponent,
-    StartComponent
+    StartComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
