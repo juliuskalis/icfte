@@ -11,35 +11,35 @@ export class CardService {
       id: 1,
       question: 'Was ist was',
       answer: '',
-      category: '',
-      tags: []
+      category: 'new',
+      tags: ['test']
     },
     {
       id: 2,
       question: 'wieso, weshalb, warum',
       answer: '',
-      category: '',
+      category: 'new',
       tags: []
     },
     {
       id: 3,
       question: 'wer nicht fragt',
       answer: '',
-      category: '',
+      category: 'new',
       tags: []
     },
     {
       id: 4,
       question: 'bleibt dumm',
       answer: '',
-      category: '',
+      category: 'new',
       tags: []
     },
     {
       id: 5,
       question: '!',
       answer: '',
-      category: '',
+      category: 'new',
       tags: []
     }
   ];
@@ -56,6 +56,10 @@ export class CardService {
   }
 
   saveCardCategory(category: string): void {
+    const x = category;
+    if(x) {
+      console.log(x);
+    }
     /*let x = this.cards.find(x => x.id === card.id);
     if(x) {
       x = card;
