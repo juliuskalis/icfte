@@ -1,0 +1,31 @@
+<div *ngIf="cardBool" class="question">
+  <div class="top">
+    {{cards[cardIndex].id}} {{cards[cardIndex].category}} {{cards[cardIndex].tags}}
+    <!-- {{currentCard?.id}} {{currentCard?.category}} {{currentCard?.tags}}-->
+  </div>
+  <div class="main">
+    {{cards[cardIndex].question}}
+  </div>
+  <div class="bottom">
+    comment
+  </div>
+  <div class="button">
+    <button (click)="cardBool = false">Ok</button>
+  </div>
+</div>
+
+<div *ngIf="!cardBool" class="answer">
+  <div class="top">
+    {{cards[cardIndex].id}} {{cards[cardIndex].category}} {{cards[cardIndex].tags}}
+  </div>
+  <div class="main">
+    comment
+  </div>
+  <div class="bottom">
+    answer
+  </div>
+  <div class="next">
+    <button *ngIf="cardIndex < cards.length-1" (click)="nextCard()">next</button>
+    <button *ngIf="cardIndex === cards.length-1" (click)="redo()">Neustart</button>
+  </div>
+</div>
