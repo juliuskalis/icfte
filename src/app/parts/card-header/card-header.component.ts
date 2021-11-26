@@ -8,5 +8,6 @@ import {Component, Input } from '@angular/core';
 export class CardHeaderComponent {
   @Input() category?: string;
   @Input() id?: number;
-  @Input() step?: string;
+  @Input() step?: number;
+  @Input() hideCategory?: boolean;
 }

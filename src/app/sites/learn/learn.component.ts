@@ -10,41 +10,40 @@ import {CardService} from "../../services/card.service";
 export class LearnComponent implements OnInit, OnDestroy {
 
   cardIndex: number = 0;
-
-  cardStep: string = '1';
-
+  cardStep: number = 1;
   currentAnswer: string = '';
+  hideCategory: boolean = true;
 
   cards: Card[] = [];
 
-  constructor(private cardService: CardService) {
-  }
+  constructor(private cardService: CardService) {}
 
   ngOnInit(): void {
     this.cards = this.cardService.getCardsWithoutCategory('finished');
   }
 
   nextCard(): void {
-    this.cardIndex++;
-    // this.cardBool = true;
+    if (this.cardStep !== 3) {
+      this.cardStep++;
+    } else {
+      this.currentAnswer = '';
+      this.cardIndex++;
+      this.cardStep = 1;
+    }
   }
 
-  step1nextCard(): void {
-    this.cardStep = '2';
+  stepBack(): void {
+    if (this.cardStep !== 1) {
+      this.cardStep--;
+    } else {
+      this.currentAnswer = '';
+      this.cardIndex--;
+      this.cardStep = 3;
+    }
   }
 
-  step2nextCard(): void {
-    this.cardIndex++;
-    this.cardStep = '3';
-  }
-
-  step3nextCard(): void {
-    this.currentAnswer = '';
-    this.cardStep = '1';
-  }
-
-  saveCards() {
-    console.log(this.cardIndex);
+  updateCategoryTo(category: string, id: number): void {
+    this.cardService.saveCardCategory(category, id);
   }
 
   redo() {

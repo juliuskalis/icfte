@@ -1,12 +1,17 @@
 @import "../../../colors";
 
-.headerBox {
+.headerPosition {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  background-color: $bgc;
   border-bottom: 1px solid $border;
+  background-color: $bgc;
+}
+
+.headerBox {
+  max-width: 800px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
@@ -20,6 +25,9 @@
   }
   .center {
     justify-self: center;
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
   }
   .end {
     justify-self: end;
@@ -40,4 +48,24 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+.hidesCategory {
+  background-color: $button-bgc;
+}
+
+.neu {
+  background-color: $tagColor;
+}
+
+.unsicher {
+  background-color: $cRed;
+}
+
+.gut {
+  background-color: $cYellow;
+}
+
+.perfekt {
+  background-color: $cDarkGreen;
 }
