@@ -29,7 +29,7 @@
   <div class="next">
     <div class="button" (click)="cardBool = false">
       <i class="fal fa-long-arrow-right"></i>
-      <div>test</div>
+      <div>Auflösen</div>
     </div>
   </div>
 </div>
@@ -58,12 +58,22 @@
   </div>
 
   <div class="next">
-    <button *ngIf="cardIndex < cards.length-1" (click)="nextCard()">
+    <div class="button" *ngIf="cardIndex < cards.length-1" (click)="nextCard()">
       <i class="fal fa-long-arrow-right"></i>
-    </button>
-    <button *ngIf="cardIndex === cards.length-1" (click)="redo()">
+      <div>Weiter</div>
+    </div>
+    <div class="button" *ngIf="cardIndex === cards.length-1" (click)="redo()">
       <i class="fal fa-undo"></i>
-    </button>
+      <div style="margin-top: 0.5rem;">Neustart</div>
+    </div>
+<!--    <button *ngIf="cardIndex < cards.length-1" (click)="nextCard()">-->
+<!--      <i class="fal fa-long-arrow-right"></i>-->
+<!--      <div>test</div>-->
+<!--    </button>-->
+<!--    <button *ngIf="cardIndex === cards.length-1" (click)="redo()">-->
+<!--      <i class="fal fa-undo"></i>-->
+<!--      <div>Neustart</div>-->
+<!--    </button>-->
   </div>
 
 </div>
