@@ -4,15 +4,12 @@
 <div *ngIf="cardBool" class="question">
 
   <div class="headerBox">
-    <div class="start">#{{cards[cardIndex].id}}</div>
+    <a [routerLink]="['/start']" class="start phoneNavButtonOverlay">
+      <i class="fal fa-angle-left"></i>
+    </a>
     <div class="center">{{cards[cardIndex].category}}</div>
     <div class="end">
-      <ng-container *ngIf="cards[cardIndex].tags.length !== 0">
-        tags: {{cards[cardIndex].tags.length}}
-      </ng-container>
-      <ng-container *ngIf="cards[cardIndex].tags.length === 0">
-        no tags set
-      </ng-container>
+      #{{cards[cardIndex].id}}
     </div>
   </div>
 
@@ -29,7 +26,7 @@
     comment
   </div>
 
-  <div class="button">
+  <div class="next">
     <button (click)="cardBool = false">
 <!--      <i class="fal fa-arrow-right"></i>-->
       <i class="fal fa-long-arrow-right"></i>
@@ -37,25 +34,36 @@
   </div>
 </div>
 
+
+
+
 <div *ngIf="!cardBool" class="answer">
-  <div class="top">
-    {{cards[cardIndex].id}}
-    {{cards[cardIndex].category}}
-    <ng-container *ngIf="cards[cardIndex].tags.length !== 0">
-      tags: {{cards[cardIndex].tags.length}}
-    </ng-container>
-    <ng-container *ngIf="cards[cardIndex].tags.length === 0">
-      no tags set
-    </ng-container>
+
+  <div class="headerBox">
+    <a [routerLink]="['/start']" class="start phoneNavButtonOverlay">
+      <i class="fal fa-angle-left"></i>
+    </a>
+    <div class="center">{{cards[cardIndex].category}}</div>
+    <div class="end">
+      #{{cards[cardIndex].id}}
+    </div>
   </div>
-  <div class="main">
+
+  <div class="commentBox">
     comment
   </div>
+
   <div class="bottom">
     {{cards[cardIndex].answer}}
   </div>
+
   <div class="next">
-    <button *ngIf="cardIndex < cards.length-1" (click)="nextCard()">next</button>
-    <button *ngIf="cardIndex === cards.length-1" (click)="redo()">Neustart</button>
+    <button *ngIf="cardIndex < cards.length-1" (click)="nextCard()">
+      <i class="fal fa-long-arrow-right"></i>
+    </button>
+    <button *ngIf="cardIndex === cards.length-1" (click)="redo()">
+      <i class="fal fa-undo"></i>
+    </button>
   </div>
+
 </div>
