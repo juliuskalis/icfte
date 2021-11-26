@@ -3,11 +3,16 @@
     <a [routerLink]="['/start']" class="start phoneNavButtonOverlay">
       <i class="fal fa-angle-left"></i>
     </a>
-    <ng-container *ngIf="step !== '3'">
-      <div class="center">{{category}}</div>
-      <div class="end">
-        #{{id}}
-      </div>
-    </ng-container>
+    <div *ngIf="!hideCategory" class="center"
+         [ngClass]="{
+         'perfekt':category === 'perfekt',
+         'gut':category === 'gut',
+         'unsicher':category === 'unsicher',
+         'neu':category === 'neu'}">
+    </div>
+    <div *ngIf="hideCategory" class="center hidesCategory"></div>
+    <div class="end">
+      #{{id}}
+    </div>
   </div>
 </div>

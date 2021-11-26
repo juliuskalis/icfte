@@ -25,6 +25,9 @@
   }
   .center {
     justify-self: center;
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
   }
   .end {
     justify-self: end;
@@ -45,4 +48,24 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+.hidesCategory {
+  background-color: $button-bgc;
+}
+
+.neu {
+  background-color: $tagColor;
+}
+
+.unsicher {
+  background-color: $cRed;
+}
+
+.gut {
+  background-color: $cYellow;
+}
+
+.perfekt {
+  background-color: $cDarkGreen;
 }

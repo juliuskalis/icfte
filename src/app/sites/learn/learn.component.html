@@ -2,18 +2,21 @@
 
 <div class="top"></div>
 
-<div *ngIf="cardStep === '1'" class="step1">
+<div *ngIf="cardStep === 1" class="step1">
 
-  <app-part-card-header [category]="cards[cardIndex].category" [id]="cards[cardIndex].id" [step]="cardStep"></app-part-card-header>
+  <app-part-card-header
+    [category]="cards[cardIndex].category"
+    [id]="cards[cardIndex].id"
+    [step]="cardStep"
+    [hideCategory]="hideCategory"
+  ></app-part-card-header>
 
   <div class="maxWidth">
     <div class="questionBox">
       <div class="header">
         Frage:
       </div>
-      <div class="text">
-        {{cards[cardIndex].question}}
-      </div>
+      {{cards[cardIndex].question}}
     </div>
 
     <div class="commentBox">
@@ -21,21 +24,30 @@
     </div>
   </div>
 
-  <div class="nextPosition">
-    <div class="next">
-      <div class="button" (click)="step1nextCard()">
-        <i class="fal fa-long-arrow-right"></i>
-        <div>Auflösen</div>
-      </div>
+  <div class="buttonPosition">
+    <div class="alignButtons">
+        <div class="button" (click)="stepBack()" [style.visibility]="cardIndex === 0 ? 'hidden' : ''">
+          <i class="fal fa-long-arrow-left"></i>
+          <div>Vorherige Karte</div>
+        </div>
+        <div class="button" (click)="nextCard()">
+          <i class="fal fa-long-arrow-right"></i>
+          <div>Auflösen</div>
+        </div>
     </div>
   </div>
 
 </div>
 
 
-<div *ngIf="cardStep === '2'" class="step2">
+<div *ngIf="cardStep === 2" class="step2">
 
-  <app-part-card-header [category]="cards[cardIndex].category" [id]="cards[cardIndex].id" [step]="cardStep"></app-part-card-header>
+  <app-part-card-header
+    [category]="cards[cardIndex].category"
+    [id]="cards[cardIndex].id"
+    [step]="cardStep"
+    [hideCategory]="hideCategory"
+  ></app-part-card-header>
 
   <div class="maxWidth">
     <div class="commentBox">
@@ -49,15 +61,17 @@
       <div class="header">
         Lösung:
       </div>
-      <div class="text">
-        {{cards[cardIndex].answer}}
-      </div>
+      {{cards[cardIndex].answer}}
     </div>
   </div>
 
-  <div class="nextPosition">
-    <div class="next">
-      <div class="button" (click)="step2nextCard()">
+  <div class="buttonPosition">
+    <div class="alignButtons">
+      <div class="button" (click)="stepBack()">
+        <i class="fal fa-long-arrow-left"></i>
+        <div>Zurück zur Frage</div>
+      </div>
+      <div class="button" (click)="nextCard()">
         <i class="fal fa-long-arrow-right"></i>
         <div>Weiter</div>
       </div>
@@ -66,15 +80,33 @@
 
 </div>
 
-<div *ngIf="cardStep === '3'" class="step2">
+<div *ngIf="cardStep === 3" class="step3">
 
-  <app-part-card-header [category]="cards[cardIndex].category" [id]="cards[cardIndex].id" [step]="cardStep"></app-part-card-header>
+  <app-part-card-header
+    [category]="cards[cardIndex].category"
+    [id]="cards[cardIndex].id"
+    [step]="cardStep"
+    [hideCategory]="hideCategory"
+  ></app-part-card-header>
 
-  <div class="maxWidth">test</div>
+  <div class="maxWidth">
+    <div class="reviewBox">
+      <div class="reviewBoxHeader">Wie gut kannst du die Karte?</div>
+      <div class="reviewBoxSelection">
+        <div class="perfekt" [ngClass]="{'scaleSelected':cards[cardIndex].category === 'perfekt'}" (click)="updateCategoryTo('perfekt', cards[cardIndex].id)">perfekt</div>
+        <div class="gut" [ngClass]="{'scaleSelected':cards[cardIndex].category === 'gut'}" (click)="updateCategoryTo('gut', cards[cardIndex].id)">gut</div>
+        <div class="unsicher" [ngClass]="{'scaleSelected':cards[cardIndex].category === 'unsicher'}" (click)="updateCategoryTo('unsicher', cards[cardIndex].id)">unsicher</div>
+      </div>
+    </div>
+  </div>
 
-  <div class="nextPosition">
-    <div class="next">
-      <div class="button" *ngIf="cardIndex < cards.length-1" (click)="step3nextCard()">
+  <div class="buttonPosition">
+    <div class="alignButtons">
+      <div class="button" (click)="stepBack()">
+        <i class="fal fa-long-arrow-left"></i>
+        <div>Zurück zur Lösung</div>
+      </div>
+      <div class="button" *ngIf="cardIndex < cards.length-1" (click)="nextCard()">
         <i class="fal fa-long-arrow-right"></i>
         <div>Nächste Karte</div>
       </div>
