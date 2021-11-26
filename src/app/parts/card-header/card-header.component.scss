@@ -1,12 +1,17 @@
 @import "../../../colors";
 
-.headerBox {
+.headerPosition {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  background-color: $bgc;
   border-bottom: 1px solid $border;
+  background-color: $bgc;
+}
+
+.headerBox {
+  max-width: 800px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;

@@ -6,7 +6,7 @@
 
   <app-part-card-header [category]="cards[cardIndex].category" [id]="cards[cardIndex].id" [step]="cardStep"></app-part-card-header>
 
-<!--  <div class="scrollableBox">-->
+  <div class="maxWidth">
     <div class="questionBox">
       <div class="header">
         Frage:
@@ -19,24 +19,25 @@
     <div class="commentBox">
       <textarea name="" id="0" rows="8" placeholder="Deine Antwort ..." [(ngModel)]="currentAnswer"></textarea>
     </div>
-<!--  </div>-->
+  </div>
 
-  <div class="next">
-    <div class="button" (click)="step1nextCard()">
-      <i class="fal fa-long-arrow-right"></i>
-      <div>Auflösen</div>
+  <div class="nextPosition">
+    <div class="next">
+      <div class="button" (click)="step1nextCard()">
+        <i class="fal fa-long-arrow-right"></i>
+        <div>Auflösen</div>
+      </div>
     </div>
   </div>
+
 </div>
-
-
 
 
 <div *ngIf="cardStep === '2'" class="step2">
 
   <app-part-card-header [category]="cards[cardIndex].category" [id]="cards[cardIndex].id" [step]="cardStep"></app-part-card-header>
 
-  <div class="scrollableBox">
+  <div class="maxWidth">
     <div class="commentBox">
       <div class="header">
         Deine Antwort:
@@ -54,21 +55,13 @@
     </div>
   </div>
 
-  <div class="next">
-
-    <div class="button" (click)="step2nextCard()">
-      <i class="fal fa-long-arrow-right"></i>
-      <div>Weiter</div>
+  <div class="nextPosition">
+    <div class="next">
+      <div class="button" (click)="step2nextCard()">
+        <i class="fal fa-long-arrow-right"></i>
+        <div>Weiter</div>
+      </div>
     </div>
-
-<!--    <div class="button" *ngIf="cardIndex < cards.length-1" (click)="step2nextCard()">-->
-<!--      <i class="fal fa-long-arrow-right"></i>-->
-<!--      <div>Weiter</div>-->
-<!--    </div>-->
-<!--    <div class="button buttonColorRestart" *ngIf="cardIndex === cards.length-1" (click)="redo()">-->
-<!--      <i class="fal fa-undo"></i>-->
-<!--      <div style="margin-top: 0.5rem;">Neustart</div>-->
-<!--    </div>-->
   </div>
 
 </div>
@@ -77,18 +70,18 @@
 
   <app-part-card-header [category]="cards[cardIndex].category" [id]="cards[cardIndex].id" [step]="cardStep"></app-part-card-header>
 
-  <div class="scrollableBox">
+  <div class="maxWidth">test</div>
 
-  </div>
-
-  <div class="next">
-    <div class="button" *ngIf="cardIndex < cards.length-1" (click)="step3nextCard()">
-      <i class="fal fa-long-arrow-right"></i>
-      <div>Nächste Karte</div>
-    </div>
-    <div class="button buttonColorRestart" *ngIf="cardIndex === cards.length-1" (click)="redo()">
-      <i class="fal fa-undo"></i>
-      <div style="margin-top: 0.8rem;">Neustart</div>
+  <div class="nextPosition">
+    <div class="next">
+      <div class="button" *ngIf="cardIndex < cards.length-1" (click)="step3nextCard()">
+        <i class="fal fa-long-arrow-right"></i>
+        <div>Nächste Karte</div>
+      </div>
+      <div class="button buttonColorRestart" *ngIf="cardIndex === cards.length-1" (click)="redo()">
+        <i class="fal fa-undo"></i>
+        <div style="margin-top: 0.8rem;">Neustart</div>
+      </div>
     </div>
   </div>
 
