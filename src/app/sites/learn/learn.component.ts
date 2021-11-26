@@ -11,7 +11,9 @@ export class LearnComponent implements OnInit, OnDestroy {
 
   cardIndex: number = 0;
 
-  cardBool: boolean = true;
+  cardStep: string = '1';
+
+  currentAnswer: string = '';
 
   cards: Card[] = [];
 
@@ -24,7 +26,21 @@ export class LearnComponent implements OnInit, OnDestroy {
 
   nextCard(): void {
     this.cardIndex++;
-    this.cardBool = true;
+    // this.cardBool = true;
+  }
+
+  step1nextCard(): void {
+    this.cardStep = '2';
+  }
+
+  step2nextCard(): void {
+    this.cardIndex++;
+    this.cardStep = '3';
+  }
+
+  step3nextCard(): void {
+    this.currentAnswer = '';
+    this.cardStep = '1';
   }
 
   saveCards() {

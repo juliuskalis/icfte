@@ -1,83 +1,98 @@
 @import "../../../colors";
 
-.headerBox {
-  border-bottom: 1px solid $border;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
-  align-items: center;
-  height: 70px;
-  padding: 0 1rem;
-  .start {
-    justify-self: start;
-    font-size: 2rem;
-  }
-  .center {
-    justify-self: center;
-  }
-  .end {
-    justify-self: end;
-  }
+.questionBox {
+  padding: $padding;
+  border-bottom: 1px dashed $border;
 }
 
-.questionBox {
-  padding: 2rem;
-  .header {
-    //padding: 1rem;
-  }
-  .text {
-    padding: 1rem;
-    background-color: $button-bgc;
-    border-radius: $borderRadius;
-    margin-top: 1rem;
-  }
+.answerBox {
+  padding: $padding;
+  border-top: 1px dashed $border;
 }
+
+.header {
+  padding: calc(#{$padding} / 4);
+  background-color: $button-bgc;
+  width: max-content;
+  font-size: 0.6rem;
+  border-radius: $borderRadius;
+  text-transform: uppercase;
+  font-family: Roboto-Bold, serif;
+  color: $tagColor;
+  margin-bottom: calc(#{$padding} / 2);
+}
+
+.text {
+  border-radius: $borderRadius;
+  //padding-top: calc(#{$padding} / 2);
+}
+
 
 .commentBox {
+  padding: $padding;
 
+  textarea {
+    padding: calc(#{$padding} / 2);
+    width: calc(100% - 2rem);
+    resize: none;
+    border-radius: $borderRadius;
+    background-color: $button-bgc;
+    border-width: 0;
+    font-size: 1rem;
+    font-family: Roboto, serif;
+    outline: none;
+  }
 }
 
 .next {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  width: calc(50% - 1rem);
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: end;
+  padding: calc(#{$padding} / 2);
+  box-sizing: border-box;
+  border-top: 1px solid $border;
+
   .button {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 50%;
     height: 100px;
     border: none;
     background-color: $button-bgc;
     //border-top-left-radius: $borderRadius;
     border-radius: $borderRadius;
+
     i {
       font-size: 2.6rem;
     }
+
     div {
       text-transform: uppercase;
       font-size: 0.6rem;
       font-family: Roboto-Medium, serif;
     }
   }
+
+  .buttonColorGreen {
+    background-color: $cGreen;
+    color: $bgc;
+  }
+
+  .buttonColorBlue {
+    background-color: $cNewBlue;
+    color: $bgc;
+  }
+
+  .buttonColorRestart {
+    background-color: $cDarkBlue;
+    color: $cGray;
+  }
 }
 
-
-//border-bottom: 1px dashed $border;
-.phoneNavButtonOverlay {
-  position: relative;
-  margin: auto 0;
-  cursor: pointer;
-}
-.phoneNavButtonOverlay:before {
-  content: '';
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+.scrollableBox {
+  height: calc(100vh - (71px + (101px + #{$padding})));
+  overflow: auto;
 }

@@ -1,0 +1,37 @@
+@import "../../../colors";
+
+.headerBox {
+  border-bottom: 1px solid $border;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+  height: 70px;
+  padding: 0 $padding;
+  .start {
+    justify-self: start;
+    font-size: 2rem;
+  }
+  .center {
+    justify-self: center;
+  }
+  .end {
+    justify-self: end;
+  }
+}
+
+.phoneNavButtonOverlay {
+  position: relative;
+  margin: auto 0;
+  cursor: pointer;
+}
+.phoneNavButtonOverlay:before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}

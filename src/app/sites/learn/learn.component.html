@@ -1,33 +1,27 @@
 <!--Verschiedene Ansichten machen damit man eine Animation hinzufügen kann ohne probleme mit einem Infinity loop zu bekommen-->
 
 
-<div *ngIf="cardBool" class="question">
+<div *ngIf="cardStep === '1'" class="step1">
 
-  <div class="headerBox">
-    <a [routerLink]="['/start']" class="start phoneNavButtonOverlay">
-      <i class="fal fa-angle-left"></i>
-    </a>
-    <div class="center">{{cards[cardIndex].category}}</div>
-    <div class="end">
-      #{{cards[cardIndex].id}}
-    </div>
-  </div>
+  <app-part-card-header [category]="cards[cardIndex].category" [id]="cards[cardIndex].id" [step]="cardStep"></app-part-card-header>
 
-  <div class="questionBox">
-    <div class="header">
-      Frage:
+  <div class="scrollableBox">
+    <div class="questionBox">
+      <div class="header">
+        Frage:
+      </div>
+      <div class="text">
+        {{cards[cardIndex].question}}
+      </div>
     </div>
-    <div class="text">
-      {{cards[cardIndex].question}}
-    </div>
-  </div>
 
-  <div class="commentBox">
-    comment
+    <div class="commentBox">
+      <textarea name="" id="0" rows="8" placeholder="Deine Antwort ..." [(ngModel)]="currentAnswer"></textarea>
+    </div>
   </div>
 
   <div class="next">
-    <div class="button" (click)="cardBool = false">
+    <div class="button" (click)="step1nextCard()">
       <i class="fal fa-long-arrow-right"></i>
       <div>Auflösen</div>
     </div>
@@ -37,43 +31,64 @@
 
 
 
-<div *ngIf="!cardBool" class="answer">
+<div *ngIf="cardStep === '2'" class="step2">
 
-  <div class="headerBox">
-    <a [routerLink]="['/start']" class="start phoneNavButtonOverlay">
-      <i class="fal fa-angle-left"></i>
-    </a>
-    <div class="center">{{cards[cardIndex].category}}</div>
-    <div class="end">
-      #{{cards[cardIndex].id}}
+  <app-part-card-header [category]="cards[cardIndex].category" [id]="cards[cardIndex].id" [step]="cardStep"></app-part-card-header>
+
+  <div class="scrollableBox">
+    <div class="commentBox">
+      <div class="header">
+        Deine Antwort:
+      </div>
+      <textarea name="" id="1" rows="8" placeholder="Deine Antwort ..." disabled [(ngModel)]="currentAnswer"></textarea>
     </div>
-  </div>
 
-  <div class="commentBox">
-    comment
-  </div>
-
-  <div class="bottom">
-    {{cards[cardIndex].answer}}
+    <div class="answerBox">
+      <div class="header">
+        Lösung:
+      </div>
+      <div class="text">
+        {{cards[cardIndex].answer}}
+      </div>
+    </div>
   </div>
 
   <div class="next">
-    <div class="button" *ngIf="cardIndex < cards.length-1" (click)="nextCard()">
+
+    <div class="button" (click)="step2nextCard()">
       <i class="fal fa-long-arrow-right"></i>
       <div>Weiter</div>
     </div>
-    <div class="button" *ngIf="cardIndex === cards.length-1" (click)="redo()">
-      <i class="fal fa-undo"></i>
-      <div style="margin-top: 0.5rem;">Neustart</div>
-    </div>
-<!--    <button *ngIf="cardIndex < cards.length-1" (click)="nextCard()">-->
+
+<!--    <div class="button" *ngIf="cardIndex < cards.length-1" (click)="step2nextCard()">-->
 <!--      <i class="fal fa-long-arrow-right"></i>-->
-<!--      <div>test</div>-->
-<!--    </button>-->
-<!--    <button *ngIf="cardIndex === cards.length-1" (click)="redo()">-->
+<!--      <div>Weiter</div>-->
+<!--    </div>-->
+<!--    <div class="button buttonColorRestart" *ngIf="cardIndex === cards.length-1" (click)="redo()">-->
 <!--      <i class="fal fa-undo"></i>-->
-<!--      <div>Neustart</div>-->
-<!--    </button>-->
+<!--      <div style="margin-top: 0.5rem;">Neustart</div>-->
+<!--    </div>-->
+  </div>
+
+</div>
+
+<div *ngIf="cardStep === '3'" class="step2">
+
+  <app-part-card-header [category]="cards[cardIndex].category" [id]="cards[cardIndex].id" [step]="cardStep"></app-part-card-header>
+
+  <div class="scrollableBox">
+
+  </div>
+
+  <div class="next">
+    <div class="button" *ngIf="cardIndex < cards.length-1" (click)="step3nextCard()">
+      <i class="fal fa-long-arrow-right"></i>
+      <div>Nächste Karte</div>
+    </div>
+    <div class="button buttonColorRestart" *ngIf="cardIndex === cards.length-1" (click)="redo()">
+      <i class="fal fa-undo"></i>
+      <div style="margin-top: 0.8rem;">Neustart</div>
+    </div>
   </div>
 
 </div>
