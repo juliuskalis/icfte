@@ -1,23 +1,34 @@
-Verschiedene Ansichten machen damit man eine Animation hinzufügen kann ohne probleme mit einem Infinity loop zu bekommen
+<!--Verschiedene Ansichten machen damit man eine Animation hinzufügen kann ohne probleme mit einem Infinity loop zu bekommen-->
 
 
 <div *ngIf="cardBool" class="question">
-  <div class="top">
-    {{cards[cardIndex].id}}
-    {{cards[cardIndex].category}}
-    <ng-container *ngIf="cards[cardIndex].tags.length !== 0">
-      tags: {{cards[cardIndex].tags.length}}
-    </ng-container>
-    <ng-container *ngIf="cards[cardIndex].tags.length === 0">
-      no tags set
-    </ng-container>
+
+  <div class="headerBox">
+    <div class="start">#{{cards[cardIndex].id}}</div>
+    <div class="center">{{cards[cardIndex].category}}</div>
+    <div class="end">
+      <ng-container *ngIf="cards[cardIndex].tags.length !== 0">
+        tags: {{cards[cardIndex].tags.length}}
+      </ng-container>
+      <ng-container *ngIf="cards[cardIndex].tags.length === 0">
+        no tags set
+      </ng-container>
+    </div>
   </div>
-  <div class="main">
-    {{cards[cardIndex].question}}
+
+  <div class="questionBox">
+    <div class="header">
+      Frage:
+    </div>
+    <div class="text">
+      {{cards[cardIndex].question}}
+    </div>
   </div>
-  <div class="bottom">
+
+  <div class="commentBox">
     comment
   </div>
+
   <div class="button">
     <button (click)="cardBool = false">Ok</button>
   </div>
@@ -38,7 +49,7 @@ Verschiedene Ansichten machen damit man eine Animation hinzufügen kann ohne pro
     comment
   </div>
   <div class="bottom">
-    answer
+    {{cards[cardIndex].answer}}
   </div>
   <div class="next">
     <button *ngIf="cardIndex < cards.length-1" (click)="nextCard()">next</button>

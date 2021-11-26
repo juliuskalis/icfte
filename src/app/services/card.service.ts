@@ -9,8 +9,8 @@ export class CardService {
   cards: Card[] = [
     {
       id: 1,
-      question: 'Was ist was',
-      answer: '',
+      question: 'Die Frage nummer Eins behandelt ein beipiel Thema welches so so lang ist.',
+      answer: 'Die Antwort darauf ist nicht die längste allerdings auch nicht super kurz.',
       category: 'new',
       tags: ['test']
     },

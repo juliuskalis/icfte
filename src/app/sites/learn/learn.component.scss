@@ -1,9 +1,51 @@
 @import "../../../colors";
 
-.top {
+.headerBox {
   border-bottom: 1px solid $border;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+  .start {
+    justify-self: start;
+  }
+  .center {
+    justify-self: center;
+  }
+  .end {
+    justify-self: end;
+  }
 }
 
+.questionBox {
+  padding: 2rem;
+  .header {
+    //padding: 1rem;
+  }
+  .text {
+    padding: 1rem;
+    background-color: $button-bgc;
+    border-radius: $borderRadius;
+    margin-top: 1rem;
+  }
+}
+
+.commentBox {
+
+}
+
+.button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  button {
+    width: 100px;
+    height: 100px;
+    border: none;
+    background-color: $button-bgc;
+    border-top-left-radius: $borderRadius;
+  }
+}
 
 
 //border-bottom: 1px dashed $border;
