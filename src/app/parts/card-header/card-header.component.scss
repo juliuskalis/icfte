@@ -1,6 +1,11 @@
 @import "../../../colors";
 
 .headerBox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: $bgc;
   border-bottom: 1px solid $border;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -8,6 +13,7 @@
   align-items: center;
   height: 70px;
   padding: 0 $padding;
+  box-sizing: border-box;
   .start {
     justify-self: start;
     font-size: 2rem;

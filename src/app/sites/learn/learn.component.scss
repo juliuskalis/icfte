@@ -45,12 +45,15 @@
 }
 
 .next {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
+  box-sizing: border-box;
   background-color: white;
   display: flex;
   justify-content: end;
   padding: calc(#{$padding} / 2);
-  box-sizing: border-box;
   border-top: 1px solid $border;
 
   .button {
@@ -95,4 +98,12 @@
 .scrollableBox {
   height: calc(100vh - (71px + (101px + #{$padding})));
   overflow: auto;
+}
+
+.top {
+  height: 71px;
+}
+
+.bottom {
+  height: calc(100px + #{$padding});
 }

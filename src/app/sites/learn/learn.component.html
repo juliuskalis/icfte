@@ -1,11 +1,12 @@
 <!--Verschiedene Ansichten machen damit man eine Animation hinzufügen kann ohne probleme mit einem Infinity loop zu bekommen-->
 
+<div class="top"></div>
 
 <div *ngIf="cardStep === '1'" class="step1">
 
   <app-part-card-header [category]="cards[cardIndex].category" [id]="cards[cardIndex].id" [step]="cardStep"></app-part-card-header>
 
-  <div class="scrollableBox">
+<!--  <div class="scrollableBox">-->
     <div class="questionBox">
       <div class="header">
         Frage:
@@ -18,7 +19,7 @@
     <div class="commentBox">
       <textarea name="" id="0" rows="8" placeholder="Deine Antwort ..." [(ngModel)]="currentAnswer"></textarea>
     </div>
-  </div>
+<!--  </div>-->
 
   <div class="next">
     <div class="button" (click)="step1nextCard()">
@@ -92,3 +93,5 @@
   </div>
 
 </div>
+
+<div class="bottom"></div>
