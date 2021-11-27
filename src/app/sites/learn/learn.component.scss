@@ -39,7 +39,7 @@
 }
 
 .reviewBox {
-  height: calc(100vh - (71px + 80px + #{$padding}));
+  height: calc(100vh - (71px + 80px + (#{$padding} * 2)));
   padding: $padding;
   box-sizing: border-box;
   display: flex;
