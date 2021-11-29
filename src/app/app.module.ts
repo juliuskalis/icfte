@@ -11,6 +11,7 @@ import { StartComponent } from './sites/start/start.component';
 import { QuizComponent } from './sites/quiz/quiz.component';
 import { StatisticsComponent } from './sites/statistics/statistics.component';
 import { CardHeaderComponent } from './parts/card-header/card-header.component';
+import { DownloadComponent } from './parts/download/download.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CardHeaderComponent } from './parts/card-header/card-header.component';
     StartComponent,
     QuizComponent,
     StatisticsComponent,
-    CardHeaderComponent
+    CardHeaderComponent,
+    DownloadComponent
   ],
   imports: [
     BrowserModule,

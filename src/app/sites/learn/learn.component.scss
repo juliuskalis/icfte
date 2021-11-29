@@ -39,12 +39,9 @@
 }
 
 .reviewBox {
-  height: calc(100vh - (71px + 80px + (#{$padding} * 2)));
-  padding: $padding;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
+  position: fixed;
+  bottom: calc(80px + #{$padding});
+  width: 100%;
 
   .reviewBoxHeader {
     font-family: Roboto-Medium, serif;
@@ -82,6 +79,11 @@
       transform: scale(1.2);
     }
   }
+}
+
+.reviewBox > div {
+  padding: $padding;
+  box-sizing: border-box;
 }
 
 .buttonPosition {
@@ -124,6 +126,12 @@
     font-size: 0.6rem;
     font-family: Roboto-Medium, serif;
   }
+}
+
+.positionDownloadButton {
+  display: flex;
+  justify-content: center;
+  margin-top: $padding;
 }
 
 .buttonColorRestart {

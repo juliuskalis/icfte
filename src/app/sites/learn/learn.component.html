@@ -1,5 +1,3 @@
-<!--Verschiedene Ansichten machen damit man eine Animation hinzufügen kann ohne probleme mit einem Infinity loop zu bekommen-->
-
 <div class="top"></div>
 
 <div *ngIf="cardStep === 1" class="step1">
@@ -38,7 +36,6 @@
   </div>
 
 </div>
-
 
 <div *ngIf="cardStep === 2" class="step2">
 
@@ -90,7 +87,13 @@
   ></app-part-card-header>
 
   <div class="maxWidth">
-    <div class="reviewBox">
+    <div class="positionDownloadButton">
+      <app-part-download [data]="cards"></app-part-download>
+    </div>
+  </div>
+
+  <div class="reviewBox">
+    <div class="maxWidth">
       <div class="reviewBoxHeader">Wie gut kannst du die Karte?</div>
       <div class="reviewBoxSelection">
         <div class="perfekt" [ngClass]="{'scaleSelected':cards[cardIndex].category === 'perfekt'}" (click)="updateCategoryTo('perfekt', cards[cardIndex].id)">perfekt</div>
@@ -120,3 +123,4 @@
 </div>
 
 <div class="bottom"></div>
+

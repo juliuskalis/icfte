@@ -12,7 +12,7 @@ export class LearnComponent implements OnInit, OnDestroy {
   cardIndex: number = 0;
   cardStep: number = 1;
   currentAnswer: string = '';
-  hideCategory: boolean = true;
+  hideCategory: boolean = false;
 
   cards: Card[] = [];
 
