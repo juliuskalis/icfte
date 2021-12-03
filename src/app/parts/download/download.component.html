@@ -1,4 +1,4 @@
-<a (click)="downloadStuff()" [href]="fileUrl" download="Speicherstand.json">
+<a (click)="downloadStuff()" [href]="fileUrl" [download]="'Speicherstand - ' + date + '.json'">
   <i class="fal fa-save"></i>
   Lernfortschritt speichern
 </a>
