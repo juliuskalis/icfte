@@ -1,6 +1,11 @@
-<div class="items">
-  <a [routerLink]="['learn']">learn</a>
-  <a [routerLink]="['quiz']">quiz</a>
-  <a [routerLink]="['all']">all</a>
-  <a [routerLink]="['stats']">stats</a>
+<div class="maxWidth">
+  <div class="items">
+    <a [routerLink]="['learn']">Lernen</a>
+    <a class="comingSoon">Kartensammlung</a>
+<!--    <a [routerLink]="['all']">Kartensammlung</a>-->
+    <a class="comingSoon">stats</a>
+<!--    <a [routerLink]="['stats']">stats</a>-->
+  </div>
 </div>
+
+<app-part-upload></app-part-upload>

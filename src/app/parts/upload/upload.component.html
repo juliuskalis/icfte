@@ -1,0 +1,27 @@
+<input type="file" class="fileInput" (change)="onFileSelected($event)" #fileUpload>
+<button class="uploadButton" (click)="fileUpload.click()">
+  <i class="fal fa-file-import"></i>
+  Lernfortschritt laden
+</button>
+
+<ng-container>
+  <div class="dialogBackground" [ngClass]="dialogToggle ? 'open' : 'close'">
+    <div class="maxWidth">
+      <div class="dialogBox">
+        <div class="header">
+          <div>
+            Was willst du mit diesem Lernfortschritt machen?
+          </div>
+          <div class="closeButton" (click)="dialogToggle = false">
+            <i class="fal fa-times"></i>
+          </div>
+        </div>
+        <div class="list">
+          <div (click)="overwriteCurrent()">Aktuellen Lernfortschritt überschreiben</div>
+          <div class="comingSoon">Einen neuen Lernfortschritt hinzufügen</div>
+          <div class="comingSoon">Einen vorhandenen Lernfortschritt überschreiben</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
