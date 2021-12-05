@@ -1,1 +1,5 @@
-<p>upload works!</p>
+<input type="file" class="fileInput" (change)="onFileSelected($event)" #fileUpload>
+<button class="uploadButton" (click)="fileUpload.click()">
+  <i class="fal fa-file-import"></i>
+  Lernfortschritt laden
+</button>
