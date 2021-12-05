@@ -60,4 +60,9 @@ export class CardService {
     localStorage.setItem('cards', JSON.stringify(this.cards));
   }
 
+  addNewCards(cards: Card[]): void {
+    this.cards = cards;
+    localStorage.setItem('cards', JSON.stringify(this.cards));
+  }
+
 }

@@ -4,6 +4,7 @@
   display: none;
 }
 .uploadButton {
+  margin: 0 auto;
   padding: 0 calc(#{$padding} / 2);
   border: none;
   background-color: $cDarkBlue;
@@ -13,8 +14,79 @@
   display: flex;
   align-items: center;
   font-size: 1rem;
+  cursor: pointer;
   i {
     font-size: 1.5rem;
     margin-right: calc(#{$padding} / 2);
   }
+}
+
+
+.dialogBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $bgc;
+  height: 100%;
+  overflow: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(calc(-100% - 10px));
+  transition-property: transform;
+  transition-duration: 300ms;
+}
+
+.maxWidth {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dialogBox {
+  .header {
+    padding: $padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text {
+
+    }
+    .closeButton {
+      min-width: 50px;
+      min-height: 50px;
+      background-color: $button-bgc;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+  .list {
+    padding: $padding;
+    border-top: 1px solid $border;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: $padding;
+    div {
+      background-color: $button-bgc;
+      border-radius: $borderRadius;
+      padding: $padding;
+      cursor: pointer;
+    }
+    .comingSoon {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}
+
+
+.open {
+  transform: translateX(0);
+}
+
+.close {
+  transform: translateX(calc(-100% - 10px));
 }
