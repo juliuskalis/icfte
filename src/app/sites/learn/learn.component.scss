@@ -152,3 +152,19 @@
 .bottom {
   height: calc(80px + #{$padding});
 }
+
+.noCards {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  a {
+    display: block;
+    background-color: $button-bgc;
+    border-radius: $borderRadius;
+    padding: calc(#{$padding} / 2);
+    margin-bottom: calc(#{$padding} / 2);
+  }
+}
