@@ -3,11 +3,13 @@
 .questionBox {
   padding: $padding;
   border-bottom: 1px dashed $border;
+  white-space: pre-line;
 }
 
 .answerBox {
   padding: $padding;
-  border-top: 1px dashed $border;
+  border-bottom: 1px dashed $border;
+  white-space: pre-line;
 }
 
 .header {
@@ -35,6 +37,13 @@
     font-size: 1rem;
     font-family: Roboto, serif;
     outline: none;
+  }
+}
+
+.commentBox.disabled {
+  textarea {
+    background-color: $button-bgc;
+    opacity: .5;
   }
 }
 

@@ -48,18 +48,18 @@
     ></app-part-card-header>
 
     <div class="maxWidth">
-      <div class="commentBox">
-        <div class="header">
-          Deine Antwort:
-        </div>
-        <textarea name="" id="1" rows="8" placeholder="Deine Antwort ..." disabled [(ngModel)]="currentAnswer"></textarea>
-      </div>
-
       <div class="answerBox">
         <div class="header">
           Lösung:
         </div>
         {{cards[cardIndex].answer}}
+      </div>
+
+      <div class="commentBox disabled">
+        <div class="header">
+          Deine Antwort:
+        </div>
+        <textarea name="" id="1" rows="8" placeholder="Deine Antwort ..." disabled [(ngModel)]="currentAnswer"></textarea>
       </div>
     </div>
 
