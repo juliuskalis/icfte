@@ -5,10 +5,12 @@ import {AllComponent} from "./sites/all/all.component";
 import {StartComponent} from "./sites/start/start.component";
 import {QuizComponent} from "./sites/quiz/quiz.component";
 import {StatisticsComponent} from "./sites/statistics/statistics.component";
+import {SettingsComponent} from "./sites/settings/settings.component";
 
 const routes: Routes = [
   { path: '', component: StartComponent },
   { path: 'learn', component: LearnComponent },
+  { path: 'settings', component: SettingsComponent },
   { path: 'quiz', component: QuizComponent },
   { path: 'stats', component: StatisticsComponent },
   { path: 'all', component: AllComponent },

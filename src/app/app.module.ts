@@ -13,6 +13,7 @@ import { StatisticsComponent } from './sites/statistics/statistics.component';
 import { CardHeaderComponent } from './parts/card-header/card-header.component';
 import { DownloadComponent } from './parts/download/download.component';
 import { UploadComponent } from './parts/upload/upload.component';
+import { SettingsComponent } from './sites/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UploadComponent } from './parts/upload/upload.component';
     StatisticsComponent,
     CardHeaderComponent,
     DownloadComponent,
-    UploadComponent
+    UploadComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+@import "../../../colors";
+
+.items {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2rem;
+  .item {
+    padding: 2rem 3rem;
+    display: block;
+    background-color: $button-bgc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .comingSoon {
+    cursor: not-allowed;
+    opacity: 0.5;
+    user-select: none;
+  }
+}
+
+.maxWidth {
+  max-width: 800px;
+  margin: 0 auto;
+}

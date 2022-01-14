@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Card} from "../../models/card";
 import {CardService} from "../../services/card.service";
+import {SettingsService} from "../../services/settings.service";
 
 @Component({
   selector: 'app-learn',
@@ -16,10 +17,11 @@ export class LearnComponent implements OnInit, OnDestroy {
 
   cards: Card[] = [];
 
-  constructor(private cardService: CardService) {}
+  constructor(private cardService: CardService, private settingsService: SettingsService) {}
 
   ngOnInit(): void {
     this.cards = this.cardService.getCardsWithoutCategory('finished');
+    this.getSettings();
   }
 
   nextCard(): void {
@@ -48,6 +50,14 @@ export class LearnComponent implements OnInit, OnDestroy {
 
   redo() {
     console.log('redo');
+  }
+
+  getSettings() {
+    const settings = this.settingsService.getAll();
+    const x = settings.find(x => x.id === 0)?.value;
+    if (x) {
+      this.hideCategory = x;
+    }
   }
 
   ngOnDestroy() {}
