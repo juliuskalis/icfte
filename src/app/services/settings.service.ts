@@ -31,7 +31,6 @@ export class SettingsService {
     if (x) {
       x.value = !x.value;
     }
-    console.log(this.allSettings);
     localStorage.setItem('settings', JSON.stringify(this.allSettings));
   }
 
