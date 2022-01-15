@@ -1,17 +1,28 @@
 @import "../../../colors";
 
+.goBack {
+  height: 70px;
+  border-bottom: 1px solid $border;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.header {
+  color: #aaa;
+}
 .items {
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 2rem;
   .item {
-    padding: 2rem 3rem;
-    display: block;
-    background-color: $button-bgc;
-    border-radius: 5px;
-    text-align: center;
+    padding: 2rem 0;
+    //border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .comingSoon {
     cursor: not-allowed;
@@ -20,7 +31,35 @@
   }
 }
 
-.maxWidth {
-  max-width: 800px;
-  margin: 0 auto;
+
+.track {
+  width: 50px;
+  min-width: 50px;
+  height: 25px;
+  background-color: #e0e0e0;
+  border-radius: 100px;
+  padding: 2px;
+  position: relative;
+  transition-property: background-color;
+  transition-duration: 200ms;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 100px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition-property: transform;
+  transition-duration: 200ms;
+}
+
+.transform {
+  transform: translateX(25px);
+}
+
+.activeBGC {
+  background-color: #6495ED;
 }

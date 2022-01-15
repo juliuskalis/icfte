@@ -1,6 +1,14 @@
-<div style="margin-top: 1rem;">
-  <a [routerLink]="['/']">zurück</a>
-</div>
-<div class="items">
-  <div class="item" (click)="toggleSetting(0)">Kartenkategorie ausblenden: {{settings[0].value}}</div>
+<div class="maxWidth">
+  <div class="goBack">
+    <a [routerLink]="['/']">zurück</a>
+  </div>
+  <div class="items">
+    <div class="header">Lernen</div>
+    <div class="item">
+      <div>Kategorie anzeigen:</div>
+      <div class="track" (click)="toggleSetting(0)" [ngClass]="settings[0].value ? '' : 'activeBGC'">
+        <div class="dot" [ngClass]="settings[0].value ? '' : 'transform'"></div>
+      </div>
+    </div>
+  </div>
 </div>
