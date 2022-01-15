@@ -1,4 +1,4 @@
-import {Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-part-card-header',
@@ -9,5 +9,7 @@ export class CardHeaderComponent {
   @Input() category?: string;
   @Input() id?: number;
   @Input() step?: number;
-  @Input() hideCategory?: boolean;
+  @Input() showBackbutton?: boolean;
+  @Input() showCategory?: boolean;
+  @Input() showId?: boolean;
 }

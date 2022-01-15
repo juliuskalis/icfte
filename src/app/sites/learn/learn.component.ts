@@ -13,7 +13,9 @@ export class LearnComponent implements OnInit, OnDestroy {
   cardIndex: number = 0;
   cardStep: number = 1;
   currentAnswer: string = '';
-  hideCategory: boolean = false;
+  showBackbutton: boolean | undefined;
+  showCategory: boolean | undefined;
+  showId: boolean | undefined;
 
   cards: Card[] = [];
 
@@ -56,7 +58,15 @@ export class LearnComponent implements OnInit, OnDestroy {
     const settings = this.settingsService.getAll();
     const x = settings.find(x => x.id === 0)?.value;
     if (x) {
-      this.hideCategory = x;
+      this.showCategory = x;
+    }
+    const y = settings.find(x => x.id === 1)?.value;
+    if (y) {
+      this.showId = y;
+    }
+    const z = settings.find(x => x.id === 2)?.value;
+    if (z) {
+      this.showBackbutton = z;
     }
   }
 

@@ -8,9 +8,19 @@ export class SettingsService {
   allSettings: Settings[] = [
     {
       id: 0,
-      name: 'hideCategory',
-      value: false
-    }
+      name: 'showCategory',
+      value: true
+    },
+    {
+      id: 1,
+      name: 'showId',
+      value: true
+    },
+    {
+      id: 2,
+      name: 'showBackbutton',
+      value: true
+    },
   ];
 
   constructor() {

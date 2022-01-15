@@ -1,16 +1,31 @@
 <div class="maxWidth">
   <div class="goBack">
-    <a [routerLink]="['/']">zurück</a>
+    <a [routerLink]="['/start']" class="phoneNavButtonOverlay" style="font-size: 2rem;">
+      <i class="fal fa-angle-left"></i>
+    </a>
   </div>
+
+  <div class="header">Lernen</div>
   <div class="items">
-    <div class="header">Lernen</div>
+    <div class="item">
+      <div>Den Button zum zurück navigieren anzeigen:</div>
+      <div class="track" (click)="toggleSetting(2)" [ngClass]="settings[2].value ? 'activeBGC' : ''">
+        <div class="dot" [ngClass]="settings[2].value ? 'transform' : ''"></div>
+      </div>
+    </div>
     <div class="item">
       <div>Kategorie anzeigen:</div>
-      <div class="track" (click)="toggleSetting(0)" [ngClass]="settings[0].value ? '' : 'activeBGC'">
-        <div class="dot" [ngClass]="settings[0].value ? '' : 'transform'"></div>
+      <div class="track" (click)="toggleSetting(0)" [ngClass]="settings[0].value ? 'activeBGC' : ''">
+        <div class="dot" [ngClass]="settings[0].value ? 'transform' : ''"></div>
+      </div>
+    </div>
+    <div class="item">
+      <div>Id anzeigen:</div>
+      <div class="track" (click)="toggleSetting(1)" [ngClass]="settings[1].value ? 'activeBGC' : ''">
+        <div class="dot" [ngClass]="settings[1].value ? 'transform' : ''"></div>
       </div>
     </div>
   </div>
 </div>
 
-<a [routerLink]="['/quiz']">quiz</a>
+<!--<a [routerLink]="['/quiz']">quiz</a>-->
