@@ -24,6 +24,7 @@ export class LearnComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.cards = this.cardService.getCardsWithoutCategory('finished');
     this.getSettings();
+    this.cardIndex = this.cardService.getCardIndex();
   }
 
   nextCard(): void {
@@ -33,6 +34,7 @@ export class LearnComponent implements OnInit, OnDestroy {
       this.currentAnswer = '';
       this.cardIndex++;
       this.cardStep = 1;
+      this.cardService.setCardIndex(this.cardIndex);
     }
   }
 
@@ -43,6 +45,7 @@ export class LearnComponent implements OnInit, OnDestroy {
       this.currentAnswer = '';
       this.cardIndex--;
       this.cardStep = 3;
+      this.cardService.setCardIndex(this.cardIndex);
     }
   }
 
