@@ -61,16 +61,17 @@ export class LearnComponent implements OnInit, OnDestroy {
     const settings = this.settingsService.getAll();
     const x = settings.find(x => x.id === 0)?.value;
     if (x) {
-      this.showCategory = x;
+      this.showBackbutton = x;
     }
     const y = settings.find(x => x.id === 1)?.value;
     if (y) {
-      this.showId = y;
+      this.showCategory = y;
     }
     const z = settings.find(x => x.id === 2)?.value;
     if (z) {
-      this.showBackbutton = z;
+      this.showId = z;
     }
+
   }
 
   ngOnDestroy() {}

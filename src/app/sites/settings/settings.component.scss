@@ -2,53 +2,35 @@
 
 .goBack {
   height: 70px;
-  border-bottom: 1px solid $border;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   padding: 0 $padding;
 }
 
-.phoneNavButtonOverlay {
-  position: relative;
-  margin: auto 0;
-  cursor: pointer;
-}
-.phoneNavButtonOverlay:before {
-  content: '';
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+.border {
+  border-top: 1px solid $border;
 }
 
 .header {
   color: #aaa;
   padding: $padding $padding 0 $padding;
 }
+
 .items {
   padding: calc(#{$padding} / 2) $padding;
   display: flex;
   flex-direction: column;
   gap: calc(#{$padding} / 2);
-  .item {
-    //border-bottom: 1px solid #e0e0e0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .comingSoon {
-    cursor: not-allowed;
-    opacity: 0.5;
-    user-select: none;
-  }
 }
 
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.track {
+.slider {
   width: 50px;
   min-width: 50px;
   height: 25px;
@@ -58,9 +40,11 @@
   position: relative;
   transition-property: background-color;
   transition-duration: 200ms;
+  cursor: pointer;
 }
 
-.dot {
+.slider:after {
+  content: '';
   height: 25px;
   width: 25px;
   background-color: $bgc;
@@ -72,10 +56,10 @@
   transition-duration: 200ms;
 }
 
-.transform {
-  transform: translateX(25px);
+.sliderIsActive {
+  background-color: $toggleBlue;
 }
 
-.activeBGC {
-  background-color: $toggleBlue;
+.sliderIsActive.slider:after {
+  transform: translateX(25px);
 }

@@ -6,21 +6,22 @@ import { Injectable } from '@angular/core';
 export class SettingsService {
 
   allSettings: Settings[] = [
-    {
-      id: 0,
-      name: 'showCategory',
-      value: true
-    },
-    {
-      id: 1,
-      name: 'showId',
-      value: true
-    },
-    {
-      id: 2,
-      name: 'showBackbutton',
-      value: true
-    },
+        {
+          id: 0,
+          name: 'showBackbutton',
+          value: true
+        },
+        {
+          id: 1,
+          name: 'showCategory',
+          value: true
+        },
+        {
+          id: 2,
+          name: 'showId',
+          value: true
+        },
+
   ];
 
   constructor() {
@@ -44,6 +45,11 @@ export class SettingsService {
     localStorage.setItem('settings', JSON.stringify(this.allSettings));
   }
 
+}
+interface SettingBlock {
+  blockId: number,
+  name: string,
+  settings: Settings[];
 }
 
 interface Settings {

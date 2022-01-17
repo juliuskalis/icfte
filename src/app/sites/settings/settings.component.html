@@ -4,26 +4,16 @@
       <i class="fal fa-angle-left"></i>
     </a>
   </div>
+</div>
 
+<div class="border"></div>
+
+<div class="maxWidth">
   <div class="header">Lernen</div>
   <div class="items">
-    <div class="item">
-      <div>Den Button zum zurück navigieren anzeigen:</div>
-      <div class="track" (click)="toggleSetting(2)" [ngClass]="settings[2].value ? 'activeBGC' : ''">
-        <div class="dot" [ngClass]="settings[2].value ? 'transform' : ''"></div>
-      </div>
-    </div>
-    <div class="item">
-      <div>Kategorie anzeigen:</div>
-      <div class="track" (click)="toggleSetting(0)" [ngClass]="settings[0].value ? 'activeBGC' : ''">
-        <div class="dot" [ngClass]="settings[0].value ? 'transform' : ''"></div>
-      </div>
-    </div>
-    <div class="item">
-      <div>Id anzeigen:</div>
-      <div class="track" (click)="toggleSetting(1)" [ngClass]="settings[1].value ? 'activeBGC' : ''">
-        <div class="dot" [ngClass]="settings[1].value ? 'transform' : ''"></div>
-      </div>
+    <div *ngFor="let item of settings" class="item">
+      <div>{{item.text}}</div>
+      <div class="slider" (click)="toggleSetting(item.id)" [ngClass]="item.value ? 'sliderIsActive' : ''"></div>
     </div>
   </div>
 </div>
