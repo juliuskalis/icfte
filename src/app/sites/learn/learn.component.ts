@@ -54,7 +54,10 @@ export class LearnComponent implements OnInit, OnDestroy {
   }
 
   redo() {
-    console.log('redo');
+    this.cardService.setCardIndex(0);
+    this.cardIndex = this.cardService.getCardIndex();
+    this.cardStep = 1;
+    this.currentAnswer = '';
   }
 
   getSettings() {
